@@ -1,0 +1,64 @@
+{
+    "name": "bsecure/universal-checkout",
+    "description": "Pakistan's first universal checkout solution for ecommerce stores built on woocommerce, magento, shopify and more",
+    "keywords": [
+        "bsecure",
+        "universal-checkout",
+        "ecommerce",
+        "two-step-checkout",
+        "sso",
+        "single-sign-on"
+    ],
+    "homepage": "https://github.com/bSecureCheckout/bsecure-laravel",
+    "license": "MIT",
+    "version": "0.1",
+    "type": "library",
+    "authors": [
+        {
+            "name": "bSecure",
+            "email": "hello@bsecure.pk",
+            "homepage": "https://bsecure.pk",
+            "role": "General Support"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5|^8.0",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.5",
+        "guzzlehttp/guzzle": "^7.2"
+    },
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "bSecure\\UniversalCheckout\\Tests\\": "tests",
+            "bSecure\\UniversalCheckout\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "bSecure\\UniversalCheckout\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "bSecure\\UniversalCheckout\\CheckoutServiceProvider",
+                "bSecure\\UniversalCheckout\\SSOServiceProvider"
+            ],
+            "aliases": {
+                "BsecureCheckout": "bSecure\\UniversalCheckout\\CheckoutFacade",
+                "BsecureSSO": "bSecure\\UniversalCheckout\\SSOFacade"
+            }
+        }
+    }
+}
