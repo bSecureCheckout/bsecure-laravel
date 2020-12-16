@@ -25,7 +25,7 @@ It is built for *desktop*, *tablet*, and *mobile devices* and is continuously te
 ### Installation
 You can install the package via **composer**
 
-``composer require bSecure/universal-checkout``
+``composer require bSecure/bsecure-laravel``
 
 **Prerequisites** 
 
