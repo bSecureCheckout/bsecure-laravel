@@ -13,7 +13,6 @@
     ],
     "homepage": "https://github.com/bSecureCheckout/bsecure-laravel",
     "license": "MIT",
-    "version": "1.0.0",
     "type": "library",
     "authors": [
         {
