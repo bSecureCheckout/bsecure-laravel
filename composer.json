@@ -7,11 +7,13 @@
         "ecommerce",
         "two-step-checkout",
         "sso",
-        "single-sign-on"
+        "single-sign-on",
+        "universal-login",
+        "frictionless payment"
     ],
     "homepage": "https://github.com/bSecureCheckout/bsecure-laravel",
     "license": "MIT",
-    "version": "0.1.1",
+    "version": "1.0.0",
     "type": "library",
     "authors": [
         {
