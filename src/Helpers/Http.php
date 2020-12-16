@@ -5,17 +5,17 @@ namespace bSecure\UniversalCheckout\Helpers;
 class Http
 {
     static $RequestHeaders = [
-        'locale'        =>  'x-locale',
-        'currency'      =>  'x-currency',
-        'deviceType'    =>  'x-device-type',
-        'osVersion'     =>  'x-os-version',
-        'appVersion'    =>  'x-app-version',
-        'accessToken'   =>  'x-access-token'
+        'locale' => 'x-locale',
+        'currency' => 'x-currency',
+        'deviceType' => 'x-device-type',
+        'osVersion' => 'x-os-version',
+        'appVersion' => 'x-app-version',
+        'accessToken' => 'x-access-token'
     ];
 
     static $CurlContentTypes = [
-        'JSON'                  =>  'Application/json',
-        'MultiPartFormData'     =>  'Multipart/form-data'
+        'JSON' => 'Application/json',
+        'MultiPartFormData' => 'Multipart/form-data'
     ];
 
     //in case of successful create, read, update, delete & any successful operation
@@ -31,14 +31,15 @@ class Http
     const INPROCESSABLE = "inprocessable";
 
     static $Codes = [
-        self::SUCCESS       => 200,
-        self::BAD_REQUEST   => 400,
-        self::UNAUTHORISED  => 401,
+        self::SUCCESS => 200,
+        self::BAD_REQUEST => 400,
+        self::UNAUTHORISED => 401,
         self::INPROCESSABLE => 422
     ];
 
-    public static function getApiPossibleCodes(){
-        return array_values( self::$Codes );
+    public static function getApiPossibleCodes()
+    {
+        return array_values(self::$Codes);
     }
 
     public static function getIpDetails($ip)
@@ -49,6 +50,6 @@ class Http
 
         $accessKey = env('IPSTACK_API_KEY');
         $url = env('IPSTACK_URL') . $ip . '?access_key=' . $accessKey;
-        return Helper::apiRequest( 'GET',$url);
+        return Helper::apiRequest('GET', $url);
     }
 }

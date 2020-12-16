@@ -5,6 +5,7 @@ namespace bSecure\UniversalCheckout\Helpers;
 
 use bSecure\UniversalCheckout\Models\Merchant;
 
+use Exception;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;
 
@@ -20,11 +21,11 @@ class Helper
             }
 
             $payload = [
-              $contentType => $body,
-              'headers' => $headers,
-              'http_errors' => false,
-              'timeout' => 30,
-              'connect_timeout' => 30
+                $contentType => $body,
+                'headers' => $headers,
+                'http_errors' => false,
+                'timeout' => 30,
+                'connect_timeout' => 30
             ];
 
             $client = new Client();
@@ -38,7 +39,7 @@ class Helper
             }
         } catch (RequestException $e) {
 //            AppException::log($e);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
 //            AppException::log($e);
         } finally {
             return $response;
@@ -57,12 +58,12 @@ class Helper
         $authUrl = Constant::AUTH_SERVER_URL . Constant::API_ENDPOINTS['oauth'];
 
         $response = $http->post($authUrl, [
-          'form_params' => [
-            'grant_type' => 'client_credentials',
-            'client_id' => $data['client_id'],
-            'client_secret' => $data['client_secret'],
-            'scope' => "",
-          ],
+            'form_params' => [
+                'grant_type' => 'client_credentials',
+                'client_id' => $data['client_id'],
+                'client_secret' => $data['client_secret'],
+                'scope' => "",
+            ],
         ]);
 
         $result = json_decode((string)$response->getBody("access_token"), true);
@@ -104,7 +105,6 @@ class Helper
     }
 
 
-
     /**
      * Author: Sara Hasan
      * Date: 10-November-2020
@@ -117,7 +117,7 @@ class Helper
 
         $headers = ['Authorization' => 'Bearer ' . $merchantAccessToken];
 
-        $result = Helper::apiRequest($method, $url, [],$order_ref , $headers, 'form_params');
+        $result = Helper::apiRequest($method, $url, [], $order_ref, $headers, 'form_params');
 
         if (isset($result['status']) && $result['status'] == Constant::HTTP_RESPONSE_STATUSES['success']) {
             $response = ['error' => false, 'body' => $result['body']];
@@ -140,7 +140,7 @@ class Helper
 
         $headers = ['Authorization' => 'Bearer ' . $merchantAccessToken];
 
-        $result = Helper::apiRequest($method, $url, [],$payload , $headers, 'form_params');
+        $result = Helper::apiRequest($method, $url, [], $payload, $headers, 'form_params');
 
         if (isset($result['status']) && $result['status'] == Constant::HTTP_RESPONSE_STATUSES['success']) {
             $response = ['error' => false, 'body' => $result['body']];
@@ -163,7 +163,7 @@ class Helper
             $authUrl = Constant::AUTH_SERVER_URL . Constant::API_ENDPOINTS['verify_client'];
 
             $response = $http->post($authUrl, [
-              'form_params' => $ssoPayload
+                'form_params' => $ssoPayload
             ]);
 
             $result = json_decode((string)$response->getBody("access_token"), true);
@@ -174,7 +174,7 @@ class Helper
                 $response = ['error' => true, 'body' => $result];
             }
             return $response;
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return ['error' => true, 'message' => trans('bSecure::messages.sso_sco.failure'), 'exception' => $e->getTraceAsString()];
         }
     }
@@ -193,7 +193,7 @@ class Helper
         } else {
             $merchantAccessToken = $merchantToken['body'];
             // Call Create Order API
-            $response = Helper::getCustomerProfile($merchantAccessToken,$ssoCustomerProfile);
+            $response = Helper::getCustomerProfile($merchantAccessToken, $ssoCustomerProfile);
 
             if ($response['error']) {
                 return ['error' => true, 'message' => $response['body']['message']];
@@ -209,7 +209,7 @@ class Helper
      * Author: Sara Hasan
      * Date: 26-November-2020
      */
-    public static function getCustomerProfile($merchantAccessToken,$ssoCustomerProfile)
+    public static function getCustomerProfile($merchantAccessToken, $ssoCustomerProfile)
     {
         $method = 'POST';
 

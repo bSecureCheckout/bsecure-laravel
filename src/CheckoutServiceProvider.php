@@ -13,10 +13,9 @@ class CheckoutServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind("bSecure_facade", function(){
+        $this->app->bind("bSecure_facade", function () {
             return new BsecureCheckout();
         });
-
     }
 
     /**
@@ -26,17 +25,16 @@ class CheckoutServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadTranslationsFrom( resource_path('lang/vendor/bSecure'),'bSecure');
-
+        $this->loadTranslationsFrom(resource_path('lang/vendor/bSecure'), 'bSecure');
 
         if ($this->app->runningInConsole()) {
 
             $this->publishes([
-              __DIR__.'/config/config.php' => config_path('bSecure.php'),
+                __DIR__ . '/config/config.php' => config_path('bSecure.php'),
             ], 'config');
 
             $this->publishes([
-              __DIR__.'/lang/en/messages.php' => resource_path('lang/vendor/bSecure/en/messages.php'),
+                __DIR__ . '/lang/en/messages.php' => resource_path('lang/vendor/bSecure/en/messages.php'),
             ]);
         }
     }

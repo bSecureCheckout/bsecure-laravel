@@ -2,6 +2,7 @@
 
 namespace bSecure\UniversalCheckout\Models;
 
+use Exception;
 use Illuminate\Database\Eloquent\Model;
 
 class ClientApp extends Model
@@ -15,12 +16,12 @@ class ClientApp extends Model
                 return ['client_id' => '', 'error' => true, 'message' => trans('bSecure::messages.client.secret.invalid')];
             } else {
                 return [
-                  'client_id' => $merchantClientId,
-                  'client_secret' => $merchantClientSecret,
-                  'error' => false,
+                    'client_id' => $merchantClientId,
+                    'client_secret' => $merchantClientSecret,
+                    'error' => false,
                 ];
             }
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return ['client_id' => '', 'error' => true, 'message' => $e->getTraceAsString()];
         }
     }
