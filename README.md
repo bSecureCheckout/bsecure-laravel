@@ -6,11 +6,12 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/bsecure/universal-checkout.svg?style=flat-square)](https://packagist.org/packages/bsecure/universal-checkout)
 [![Latest Stable Version](https://poser.pugx.org/bsecure/universal-checkout/v)](//packagist.org/packages/bsecure/bsecure-laravel) 
-[![Build Status](https://img.shields.io/travis/bsecure/universal-checkout/master.svg?style=flat-square)](https://travis-ci.org/github/bSecureCheckout/bsecure-laravel)
-[![Quality Score](https://img.shields.io/scrutinizer/g/bsecure/universal-checkout.svg?style=flat-square)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/?branch=master)
 [![Total Downloads](https://img.shields.io/packagist/dt/bsecure/universal-checkout.svg?style=flat-square)](https://packagist.org/packages/bsecure/bsecure-laravel)
-[![License](https://poser.pugx.org/bsecure/universal-checkout/license)](//packagist.org/packages/bsecure/bsecure-laravel)
-[![Version](https://poser.pugx.org/bsecure/universal-checkout/version)](//packagist.org/packages/bsecure/bsecure-laravel)
+[![License](https://poser.pugx.org/bsecure/universal-checkout/license)](//packagist.org/packages/bsecure/universal-checkout)
+[![Version](https://poser.pugx.org/bsecure/universal-checkout/version)](//packagist.org/packages/bsecure/universal-checkout)
 
 bSecure Checkout 
 =========================
