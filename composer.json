@@ -22,16 +22,15 @@
   ],
   "minimum-stability": "dev",
   "require": {
-    "guzzlehttp/guzzle": "^6.3.1|^7.0.1|^7.2",
+    "guzzlehttp/guzzle": "^7.1@dev",
     "phpunit/phpunit": "8.5.x-dev",
     "php": ">=5.6"
   },
   "require-dev": {
-    "guzzlehttp/guzzle": "^6.3.1|^7.0.1|^7.2",
     "phpunit/phpunit": "8.5.x-dev"
   },
   "suggest": {
-    "guzzlehttp/guzzle": "Required to use the bSecure checkout and sso facade and call bSecure server (^6.3.1|^7.0.1).",
+    "guzzlehttp/guzzle": "Required to use the bSecure checkout and sso facade and call bSecure server (^6.3.1|^7.0.1)."
   },
   "autoload": {
     "psr-4": {
