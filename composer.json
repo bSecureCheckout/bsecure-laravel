@@ -1,6 +1,6 @@
 {
     "name": "bsecure/bsecure-laravel",
-    "description": "Pakistan's first universal checkout solution for ecommerce stores built on woocommerce, magento, shopify and more",
+    "description": "Pakistan's first universal checkout solution for e-commerce stores built on woocommerce, magento, shopify and more",
     "type": "library",
     "keywords": [
         "bsecure",
@@ -13,10 +13,6 @@
         "frictionless payment"
     ],
     "homepage": "https://github.com/bSecureCheckout/bsecure-laravel",
-    "require-dev": {
-        "guzzlehttp/guzzle": "7.2",
-        "phpunit/phpunit": "8.5.x-dev"
-    },
     "license": "MIT",
     "authors": [
         {
@@ -25,7 +21,11 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {},
+    "require": {
+        "guzzlehttp/guzzle": "7.2",
+        "phpunit/phpunit": "8.5.x-dev",
+        "php": ">=5.6"
+    },
     "autoload": {
         "psr-4": {
             "bSecure\\UniversalCheckout\\Tests\\": "tests",
