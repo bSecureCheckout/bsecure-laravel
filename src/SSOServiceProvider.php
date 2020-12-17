@@ -25,41 +25,17 @@ class SSOServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        /*
-         * Optional methods to load your package assets
-         */
-
-        $this->loadTranslationsFrom( __DIR__.('./resources/lang/'),'bSecure');
-
-        // $this->loadViewsFrom(__DIR__.'/../resources/views', 'universal-checkout');
-        // $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
-        // $this->loadRoutesFrom(__DIR__.'/routes.php');
+        $this->loadTranslationsFrom(resource_path('lang/vendor/bSecure'), 'bSecure');
 
         if ($this->app->runningInConsole()) {
 
             $this->publishes([
-              __DIR__.'/config/config.php' => config_path('bSecure.php'),
+              __DIR__ . '/config/config.php' => config_path('bSecure.php'),
             ], 'config');
 
-
-            // Publishing the views.
-            /*$this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/universal-checkout'),
-            ], 'views');*/
-
-            // Publishing assets.
-            /*$this->publishes([
-                __DIR__.'/../resources/assets' => public_path('vendor/universal-checkout'),
-            ], 'assets');*/
-
-            // Publishing the translation files.
             $this->publishes([
-              __DIR__.'/resources/lang' => resource_path('lang/vendor/bSecure'),
-            ],'lang');
-
-            // Registering package commands.
-            // $this->commands([]);
+              __DIR__ . '/resources/lang/en/messages.php' => resource_path('lang/vendor/bSecure/en/messages.php'),
+            ]);
         }
-
     }
 }

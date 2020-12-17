@@ -34,7 +34,7 @@ class CheckoutServiceProvider extends ServiceProvider
             ], 'config');
 
             $this->publishes([
-                __DIR__ . '/lang/en/messages.php' => resource_path('lang/vendor/bSecure/en/messages.php'),
+                __DIR__ . '/resources/lang/en/messages.php' => resource_path('lang/vendor/bSecure/en/messages.php'),
             ]);
         }
     }
