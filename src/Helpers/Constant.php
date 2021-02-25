@@ -13,9 +13,9 @@ class Constant
         'serverError' => 500,
     ];
 
-    const AUTH_SERVER_URL = 'https://api-dev.bsecure.app/';
+    const AUTH_SERVER_URL = 'https://api.bsecure.pk/';
 
-    const LOGIN_REDIRECT_URL = 'https://login-dev.bsecure.app/auth/sso';
+    const LOGIN_REDIRECT_URL = 'https://login.bsecure.pk/auth/sso';
 
     const API_VERSION = 'v1';
 

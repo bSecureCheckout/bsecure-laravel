@@ -1,17 +1,3 @@
-<p align="center">
-  <img src="https://bsecure-dev.s3-eu-west-1.amazonaws.com/dev/react_app/assets/secure_logo.png" width="400px" position="center">
-</p>
-
-
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/bsecure/bsecure-laravel.svg?style=flat-square)](https://packagist.org/packages/bsecure/bsecure-laravel)
-[![Latest Stable Version](https://poser.pugx.org/bsecure/bsecure-laravel/v)](//packagist.org/packages/bsecure/bsecure-laravel) 
-[![Total Downloads](https://img.shields.io/packagist/dt/bsecure/bsecure-laravel.svg?style=flat-square)](https://packagist.org/packages/bsecure/bsecure-laravel)
-[![License](https://poser.pugx.org/bsecure/bsecure-laravel/license)](//packagist.org/packages/bsecure/bsecure-laravel)
-[![Build Status](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/build-status/master)
-[![Code Coverage](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/?branch=master)
-
 bSecure Checkout 
 =========================
 Pakistan's first universal checkout solution that is easy and simple to integrate on your e-commerce store. 
@@ -209,7 +195,7 @@ redirect url” in your [environment settings](https://builder.bsecure.pk/) in P
 string.
 
 #### Order Updates
-By using order_ref you received in the "**[Callback on Order Placement](https://github.com/bSecureCheckout/bsecure-laravel/tree/master#callback-on-order-placement)**" you can call below method to get order details.
+By using order_ref you received in the "**[Callback on Order Placement](#callback-on-order-placement)**" you can call below method to get order details.
 
 ```
 use bSecure\UniversalCheckout\BsecureCheckout;
