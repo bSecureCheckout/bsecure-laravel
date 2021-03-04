@@ -38,7 +38,7 @@ class IOPNController extends Controller
 
             if($orderResponse['error'])
             {
-                return ApiResponseHandler::failure($orderResponse['message']);
+                return ApiResponseHandler::failure($orderResponse['message'],$orderResponse['exception']);
             }else{
                 $response = $orderResponse['body'];
 

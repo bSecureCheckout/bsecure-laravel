@@ -42,7 +42,7 @@ class CreateOrderController extends Controller
             $orderResponse = Order::createMerchantOrder($orderData);
             if($orderResponse['error'])
             {
-                return ApiResponseHandler::failure($orderResponse['message']);
+                return ApiResponseHandler::failure($orderResponse['message'],$orderResponse['exception']);
             }else{
                 $response = $orderResponse['body'];
                 return ApiResponseHandler::success($response, trans('bSecure::messages.order.success'));

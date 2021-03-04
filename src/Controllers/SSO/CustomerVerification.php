@@ -36,7 +36,7 @@ class CustomerVerification extends Controller
 
             if($ssoResponse['error'])
             {
-                return ApiResponseHandler::failure($ssoResponse['message']);
+                return ApiResponseHandler::failure($ssoResponse['message'],$ssoResponse['exception']);
             }else{
                 $response = $ssoResponse['body'];
                 return ApiResponseHandler::success($response, trans('bSecure::messages.customer.verification.success'));
