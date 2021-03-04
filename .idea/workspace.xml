@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="f7895207-6f69-4e1d-9b77-1256b8ab3935" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/Orders/CreateOrderController.php" afterPath="$PROJECT_DIR$/src/Controllers/Orders/CreateOrderController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/Orders/IOPNController.php" afterPath="$PROJECT_DIR$/src/Controllers/Orders/IOPNController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/SSO/CustomerVerification.php" afterPath="$PROJECT_DIR$/src/Controllers/SSO/CustomerVerification.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Controllers/SSO/VerifyClientController.php" afterPath="$PROJECT_DIR$/src/Controllers/SSO/VerifyClientController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -51,7 +47,7 @@
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="102">
-              <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+              <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -209,7 +205,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1005000" />
+    <option name="totallyTimeSpent" value="1095000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -567,7 +563,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <caret line="6" column="6" lean-forward="true" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
           <folding />
         </state>
       </provider>
