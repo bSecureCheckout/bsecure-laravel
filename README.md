@@ -95,23 +95,21 @@ To create an order you should have an order_id, customer and products object par
 
 Products object should be in below mentioned format:
 
+
 ```
-'products' => 
-      array (
-        0 => 
-            array (
-              'id' => 'product-id',
-              'name' => 'product-name',
-              'sku' => 'product-sku',
-              'quantity' => 0,
-              'price' => 0,
-              'sale_price' => 0,
-              'image' => 'product-image',
-              'description' => 'product-description',
-              'short_description' => 'product-short-description',
-              'product_options' =>  'product_options-object'
-            ),
-      ),
+"products": [
+  {
+  "id": "product-id",
+  "name": "product-name",
+  "sku": "product-sku",
+  "quantity": 0,
+  "price": 0,
+  "sale_price": 0,
+  "image": "product-image",
+  "description": "product-description",
+  "short_description": "product-short-description"
+  }
+]
 ```
 
 ###### Product Options Object:
@@ -137,12 +135,12 @@ Products object should be in below mentioned format:
 Shipment object should be in below mentioned format:
 
 >1- If the merchant want his pre-specified shipment method then he should pass shipment method detail in below mentioned format:  
+
 ```
-'shipment' => 
-      array (
-        'charges' => 'numeric',
-        'method_name' => 'string'
-      ),
+"shipment": {
+  "charges": "numeric",
+  "method_name": "string"
+}
 ```
 
 ###### Customer Object
@@ -154,22 +152,22 @@ just pass that code in the customer object no need for the rest of the fields.
 
 >2- Since all the fields in Customer object are optional, if you don’t have any information about customer just pass the
 empty object, or if you have customer details then your customer object should be in below mentioned format:
+
 ```
-'customer' => 
-      array (
-        'name' => 'string',
-        'email' => 'string',
-        'country_code' => 'string',
-        'phone_number' => 'string',
-      ),
+"customer": {
+  "name": "string",
+  "email": "string",
+  "country_code": "string",
+  "phone_number": "string",
+}
 ```
 
 #### Create Order
-```
+```php
 use bSecure\UniversalCheckout\BsecureCheckout;
 ```
 
-```
+```php
 $order = new BsecureCheckout();
 
 $order->setOrderId($orderId);
