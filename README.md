@@ -1,3 +1,17 @@
+<p align="center">
+  <img src="https://bsecure-dev.s3-eu-west-1.amazonaws.com/dev/react_app/assets/secure_logo.png" width="400px" position="center">
+</p>
+
+
+
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/bsecure/bsecure-laravel.svg?style=flat-square)](https://packagist.org/packages/bsecure/bsecure-laravel)
+[![Latest Stable Version](https://poser.pugx.org/bsecure/bsecure-laravel/v)](//packagist.org/packages/bsecure/bsecure-laravel) 
+[![Total Downloads](https://img.shields.io/packagist/dt/bsecure/bsecure-laravel.svg?style=flat-square)](https://packagist.org/packages/bsecure/bsecure-laravel)
+[![License](https://poser.pugx.org/bsecure/bsecure-laravel/license)](//packagist.org/packages/bsecure/bsecure-laravel)
+[![Build Status](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/badges/build.png?b=master)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/build-status/master)
+[![Code Coverage](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/?branch=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/bSecureCheckout/bsecure-laravel/?branch=master)
+
 bSecure Checkout 
 =========================
 Pakistan's first universal checkout solution that is easy and simple to integrate on your e-commerce store. 
@@ -212,6 +226,100 @@ return $result;
 #### Order Status Change Webhook
 Whenever there is any change in order status or payment status, bSecure will send you an update with complete
 order details (contents will be the same as response of *[Order Updates](https://github.com/bSecureCheckout/bsecure-laravel/tree/master#order-updates)*) on the URL you mentioned in *Checkout Order Status webhook* in your environment settings in Partners Portal. (your webhook must be able to accept POST request).
+
+
+In response of "**[Callback on Order Placement](#callback-on-order-placement)**" and "**[Order Updates](#order-updates)**" you will recieve complete details of your order in below mentioned format:
+
+```
+{
+  "status": 200,
+  "message": [
+    "Request Successful"
+  ],
+  "body": {
+    "merchant_order_id": "your-order-id",
+    "order_ref": "bsecure-order-reference",
+    "order_type": "App/Manual/Payment gateway",
+    "placement_status": "6",
+    "payment_status": null,
+    "customer": {
+      "name": "",
+      "email": "",
+      "country_code": "",
+      "phone_number": "",
+      "gender": "",
+      "dob": ""
+    },
+    "payment_method": {
+      "id": 5,
+      "name": "Debit/Credit Card"
+    },
+    "card_details": {
+      "card_type": null,
+      "card_number": null,
+      "card_expire": null,
+      "card_name": null
+    },
+    "delivery_address": {
+      "country": "",
+      "province": "",
+      "city": "",
+      "area": "",
+      "address": "",
+      "lat": "",
+      "long": ""
+    },
+    "shipment_method": {
+      "id": 0,
+      "name": "",
+      "description": "",
+      "cost": 0
+    },
+    "items": [
+      {
+        "product_id": "",
+        "product_name": "",
+        "product_sku": "",
+        "product_qty": ""
+      },
+    ],
+    "created_at": "",
+    "time_zone": "",
+    "summary": {
+      "total_amount": "",
+      "sub_total_amount": "",
+      "discount_amount": "",
+      "shipment_cost": "",
+      "merchant_service_charges": ""
+    }
+  },
+  "exception": null
+}
+
+```
+
+### Managing Orders and Payments
+
+#### Payment Status
+
+| ID  | Value     | Description                                                         |
+| :-: | :-------- | :------------------------------------------------------------------ |
+|  0  | Pending   | Order received, no payment initiated.Awaiting payment (unpaid).     |
+|  1  | Completed | Order fulfilled and complete. Payment also recieved.                |
+|  2  | Failed    | Payment failed or was declined (unpaid) or requires authentication. |
+
+#### Order Status
+
+| ID  | Value                 | Description                                                                                                                       |
+| :-: | :-------------------- | :-------------------------------------------------------------------------------------------------------------------------------- |
+|  1  | Created               | A customer created an order but not landed on bsecure                                                                             |
+|  2  | Initiated             | Order is awaiting fulfillment.                                                                                                    |
+|  3  | Placed                | Order fulfilled and complete Payment received. Order is awaiting fulfillment. – requires no further action                        |
+|  4  | Awaiting Confirmation | Awaiting action by the customer to authenticate the transaction.                                                                  |
+|  5  | Canceled              | Canceled by an admin or the customer.                                                                                             |
+|  6  | Expired               | Orders that were not fulfilled within a pre-specified timeframe. timeframe                                                        |
+|  7  | Failed                | Payment failed or was declined (unpaid).Note that this status may not show immediately and instead show as Pending until verified |
+|  8  | Awaiting Payment      | Order received, no payment initiated. Awaiting payment (unpaid)                                                                   |
 
 
 ## bSecure Single Sign On (SSO)
