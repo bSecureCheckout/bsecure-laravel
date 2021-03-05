@@ -76,7 +76,7 @@ It will create a vendor/bSecure folder inside resources/lang folder. If you want
 
 A file (bSecure.php) will be placed in config folder.
 
-```
+```php
 return [
   'client_id' => env('BSECURE_CLIENT_ID', ''),
   'client_secret' => env('BSECURE_CLIENT_SECRET',''),
@@ -209,11 +209,11 @@ string.
 #### Order Updates
 By using order_ref you received in the "**[Callback on Order Placement](#callback-on-order-placement)**" you can call below method to get order details.
 
-```
+```php
 use bSecure\UniversalCheckout\BsecureCheckout;
 ```
 
-```
+```php
 $order_ref = $order->order_ref;
 
 $orderStatusUpdate = new BsecureCheckout();
@@ -363,7 +363,7 @@ Client Authentication is of two type sdk and web client validation.
 
 >If you are using a web-solution then use below method
 
-```
+```php
 use bSecure\UniversalCheckout\BsecureSSO;
 
 $state = $requestData['state'];
@@ -382,7 +382,7 @@ array (
 ```
 
 >If you are using a sdk-solution then use below method
-```
+```php
 use bSecure\UniversalCheckout\BsecureSSO;
 
 $state = $requestData['state'];
@@ -418,7 +418,7 @@ request, you should only proceed if and only if both values match.
 Auth_code recieved from **Client Authorization** should be passed to method below to get customer profile. 
 
 
-```
+```php
 use bSecure\UniversalCheckout\BsecureSSO;
 
 $auth_code = $requestData['auth_code'];
