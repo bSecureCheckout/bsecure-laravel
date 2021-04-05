@@ -33,12 +33,6 @@ class CreateOrderController extends Controller
     public function create($orderData)
     {
         try {
-            $validator = Validator::make($orderData, Order::$validationRules['createOrder']);
-
-            if ($validator->fails()) {
-                return ApiResponseHandler::validationError($validator->errors());
-            }
-
             $orderResponse = Order::createMerchantOrder($orderData);
             if($orderResponse['error'])
             {

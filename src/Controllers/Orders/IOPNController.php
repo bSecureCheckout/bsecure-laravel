@@ -26,14 +26,6 @@ class IOPNController extends Controller
     public function orderStatus($order_ref)
     {
         try {
-
-            $validationErrors = $this->_checkForValidationRule( $order_ref );
-
-            if( count( $validationErrors ) > 0 )
-            {
-                return ApiResponseHandler::validationError( $validationErrors );
-            }
-
             $orderResponse = Order::getOrderStatus($order_ref);
 
             if($orderResponse['error'])
@@ -47,18 +39,5 @@ class IOPNController extends Controller
         } catch (\Exception $e) {
             return ApiResponseHandler::failure(trans('bSecure::messages.order.status.failure'), $e->getTraceAsString());
         }
-    }
-
-    private function _checkForValidationRule($order_ref )
-    {
-        $errors = [];
-
-
-        if( empty($order_ref) )
-        {
-            $errors[] = trans('bSecure::messages.validation.order_ref.required');
-        }
-
-        return $errors;
     }
 }
