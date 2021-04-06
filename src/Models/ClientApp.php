@@ -11,9 +11,9 @@ class ClientApp extends Model
     {
         try {
             if (empty($merchantClientId)) {
-                return ['client_id' => '', 'error' => true, 'message' => trans('bSecure::messages.client.id.invalid')];
+                return ['client_id' => '', 'error' => true, 'message' => trans('bSecure::messages.client.id.invalid'), 'exception' => trans('bSecure::messages.client.environment.invalid')];
             } else if (empty($merchantClientSecret)) {
-                return ['client_id' => '', 'error' => true, 'message' => trans('bSecure::messages.client.secret.invalid')];
+                return ['client_id' => '', 'error' => true, 'message' => trans('bSecure::messages.client.secret.invalid'), 'exception' => trans('bSecure::messages.client.environment.invalid')];
             } else {
                 return [
                     'client_id' => $merchantClientId,
@@ -22,7 +22,7 @@ class ClientApp extends Model
                 ];
             }
         } catch (Exception $e) {
-            return ['client_id' => '', 'error' => true, 'message' => $e->getTraceAsString()];
+            return ['client_id' => '', 'error' => true, 'message' => $e->getTraceAsString(), 'exception' => null];
         }
     }
 }

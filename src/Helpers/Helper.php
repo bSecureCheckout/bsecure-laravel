@@ -76,7 +76,7 @@ class Helper
                 $accessToken = isset($result['body']['access_token']) ? $result['body']['access_token'] : null;
                 return ['client_id' => '', 'error' => false, 'accessToken' => $accessToken];
             } else {
-                return ['client_id' => '', 'error' => true, 'message' => trans('bSecure::messages.client.environment.invalid')];
+                return ['client_id' => '', 'error' => true, 'message' => trans('bSecure::messages.client.environment.invalid'), 'exception' => trans('bSecure::messages.client.environment.invalid')];
             }
         }
     }
@@ -189,7 +189,7 @@ class Helper
         $merchantToken = Merchant::getMerchantAccessToken();
 
         if ($merchantToken['error']) {
-            return ['error' => true, 'message' => $merchantToken['message']];
+            return ['error' => true, 'message' => $merchantToken['message'], 'exception' => $merchantToken['exception']];
         } else {
             $merchantAccessToken = $merchantToken['body'];
             // Call Create Order API

@@ -53,7 +53,7 @@ class Order extends Model
             $merchantToken = Merchant::getMerchantAccessToken();
 
             if ($merchantToken['error']) {
-                return ['error' => true, 'message' => $merchantToken['message']];
+                return ['error' => true, 'message' => $merchantToken['message'], 'exception' => $merchantToken['exception']];
             } else {
                 $merchantAccessToken = $merchantToken['body'];
                 // Call Create Order API
@@ -81,7 +81,7 @@ class Order extends Model
             $merchantToken = Merchant::getMerchantAccessToken();
 
             if ($merchantToken['error']) {
-                return ['error' => true, 'message' => $merchantToken['message']];
+                return ['error' => true, 'message' => $merchantToken['message'], 'exception' => $merchantToken['exception']];
             } else {
                 $merchantAccessToken = $merchantToken['body'];
                 // Call Order Status Update API
@@ -113,7 +113,7 @@ class Order extends Model
             $merchantToken = Merchant::getMerchantAccessToken();
 
             if ($merchantToken['error']) {
-                return ['error' => true, 'message' => $merchantToken['message']];
+                return ['error' => true, 'message' => $merchantToken['message'], 'exception' => $merchantToken['exception']];
             } else {
                 $merchantAccessToken = $merchantToken['body'];
                 // Call Order Status Update API
@@ -141,14 +141,14 @@ class Order extends Model
             $merchantToken = Merchant::getMerchantAccessToken();
 
             if ($merchantToken['error']) {
-                return ['error' => true, 'message' => $merchantToken['message']];
+                return ['error' => true, 'message' => $merchantToken['message'], 'exception' => $merchantToken['exception']];
             } else {
                 $merchantAccessToken = $merchantToken['body'];
                 // Call Create Order API
                 $order_response = Helper::createOrder($merchantAccessToken, $order_ref);
 
                 if ($order_response['error']) {
-                    return ['error' => true, 'message' => $order_response['body']['message']];
+                    return ['error' => true, 'message' => $order_response['body']['message'], 'exception' => $order_response['body']['exception']];
                 } else {
                     return $order_response;
                 }

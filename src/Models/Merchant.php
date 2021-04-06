@@ -19,14 +19,14 @@ class Merchant extends Model
         $merchantAppCredentials = ClientApp::verifyAppCredentials($merchantClientId, $merchantClientSecret);
 
         if (empty($merchantAppCredentials)) {
-            return ['error' => true, 'message' => trans('bSecure::messages.client.invalid')];
+            return ['error' => true, 'message' => trans('bSecure::messages.client.invalid'),  'exception' => ""];
         } else {
             if (!empty($merchantAppCredentials['client_id'])) {
                 // Get Merchant Access Token
                 $merchantToken = Helper::getAccessToken($merchantAppCredentials);
 
                 if ($merchantToken['error']) {
-                    return ['error' => true, 'message' => $merchantToken['message']];
+                    return ['error' => true, 'message' => $merchantToken['message'],  'exception' => ""];
                 } else {
                     return ['error' => false, 'body' => $merchantToken['accessToken']];
                 }
@@ -34,7 +34,7 @@ class Merchant extends Model
             } else if ($merchantAppCredentials['error']) {
                 return $merchantAppCredentials;
             } else {
-                return ['error' => true, 'message' => trans('bSecure::messages.general.failed')];
+                return ['error' => true, 'message' => trans('bSecure::messages.general.failed'), 'exception' => ""];
             }
         }
     }
