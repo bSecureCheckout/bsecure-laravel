@@ -196,7 +196,7 @@ class Helper
             $response = Helper::getCustomerProfile($merchantAccessToken, $ssoCustomerProfile);
 
             if ($response['error']) {
-                return ['error' => true, 'message' => $response['body']['message']];
+                return ['error' => true, 'message' => $response['body']['message'], 'exception' => $response['body']['exception']];
             } else {
                 return $response;
             }

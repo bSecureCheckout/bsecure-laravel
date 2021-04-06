@@ -60,7 +60,7 @@ class Order extends Model
                 $order_response = Helper::createOrder($merchantAccessToken, $orderPayload);
 
                 if ($order_response['error']) {
-                    return ['error' => true, 'message' => $order_response['body']['message']];
+                    return ['error' => true, 'message' => $order_response['body']['message'], 'exception' => $order_response['body']['exception']];
                 } else {
                     return $order_response;
                 }
@@ -91,7 +91,7 @@ class Order extends Model
                 $order_response = Helper::orderStatus($merchantAccessToken, $payload);
 
                 if ($order_response['error']) {
-                    return ['error' => true, 'message' => $order_response['body']['message']];
+                    return ['error' => true, 'message' => $order_response['body']['message'], 'exception' => $order_response['body']['exception']];
                 } else {
                     return $order_response;
                 }
@@ -120,7 +120,7 @@ class Order extends Model
                 $order_response = Helper::manualOrderStatusUpdate($merchantAccessToken, $payload);
 
                 if ($order_response['error']) {
-                    return ['error' => true, 'message' => $order_response['body']['message']];
+                    return ['error' => true, 'message' => $order_response['body']['message'], 'exception' => $order_response['body']['exception']];
                 } else {
                     return $order_response;
                 }

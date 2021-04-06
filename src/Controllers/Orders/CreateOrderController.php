@@ -143,7 +143,12 @@ class CreateOrderController extends Controller
 
     public function _setCustomer($customerData)
     {
-        $customer = [];
+        $customer = [
+          "country_code" => '',
+          "phone_number" => '',
+          "name" => '',
+          "email" => '',
+        ];
         if(!empty($customerData))
         {
             $auth_code = array_key_exists('auth_code',$customerData) ? $customerData['auth_code'] : '' ;
